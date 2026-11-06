@@ -1,0 +1,53 @@
+services:
+  # 1. Database Relazionale PostgreSQL
+  db:
+    image: postgres:16-alpine
+    container_name: devops-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: devops_user
+      POSTGRES_PASSWORD: devops_password
+      POSTGRES_DB: devops_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U devops_user -d devops_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # 2. Backend FastAPI
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: devops-backend:latest
+    container_name: devops-backend
+    restart: always
+    environment:
+      # Connessione al container 'db' invece di SQLite locale
+      DATABASE_URL: postgresql://devops_user:devops_password@db:5432/devops_db
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # 3. Frontend React + Nginx
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: devops-frontend:latest
+    container_name: devops-frontend
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+# Volume persistente: i dati nel database NON andranno persi anche se spegni i container
+volumes:
+  postgres_data:

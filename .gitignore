@@ -1,0 +1,22 @@
+# Ambienti virtuali Python
+venv/
+.env
+__pycache__/
+*.pyc
+
+# Node / Frontend
+node_modules/
+dist/
+.npm
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# IDE e Sistema
+.vscode/
+.idea/
+.DS_Store
+*.db
+devops.db
