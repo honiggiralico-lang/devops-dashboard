@@ -5,16 +5,16 @@ Una piattaforma moderna per il monitoraggio e la gestione dello stato di salute 
 ---
 
 ## Indice dei Contenuti
-1. [Descrizione del Progetto](#-descrizione-del-progetto)
-2. [Architettura di Sistema](#-architettura-di-sistema)
-3. [La Pipeline CI/CD (Jenkins & GitHub Actions)](#-la-pipeline-cicd)
-4. [Stack Tecnologico](#-stack-tecnologico)
-5. [Struttura del Repository](#-struttura-del-repository)
-6. [Avvio Rapido con Podman Compose](#-avvio-rapido-con-podman-compose)
-7. [Documentazione API REST](#-documentazione-api-rest)
-8. [Esecuzione Manuale dei Test](#-esecuzione-manuale-dei-test)
-9. [Best Practice DevOps Implementate](#-best-practice-devops-implementate)
-10. [Licenza](#-licenza)
+1. [Descrizione del Progetto](#descrizione-del-progetto)
+2. [Architettura di Sistema](#architettura-di-sistema)
+3. [La Pipeline CI/CD (Jenkins & GitHub Actions)](#la-pipeline-cicd)
+4. [Stack Tecnologico](#stack-tecnologico)
+5. [Struttura del Repository](#struttura-del-repository)
+6. [Avvio Rapido con Podman Compose](#avvio-rapido-con-podman-compose)
+7. [Documentazione API REST](#documentazione-api-rest)
+8. [Esecuzione Manuale dei Test](#esecuzione-manuale-dei-test)
+9. [Best Practice DevOps Implementate](#best-practice-devops-implementate)
+10. [Licenza](#licenza)
 
 ---
 
