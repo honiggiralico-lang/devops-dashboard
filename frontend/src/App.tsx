@@ -11,7 +11,7 @@ interface Service {
   updated_at: string;
 }
 
-const API_URL = 'http://127.0.0.1:8000/api/v1/services';
+const API_URL = (import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000') + '/api/v1/services';
 
 export default function App() {
   const [services, setServices] = useState<Service[]>([]);
